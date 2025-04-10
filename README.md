@@ -18,13 +18,31 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+models.py
+from django.db import models
+from django.contrib import admin
+class Employee(models.Model):
+    User_name=models.CharField(max_length=100)
+    email=models.EmailField()
+    Phone_Number=models.IntegerField()
+    MovieName=models.CharField(max_length=100)
+    seats=models.IntegerField()
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('User_name','email','Phone_Number','MovieName','seats')
 
+admin.py
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
+
+
+```
 
 
 ## OUTPUT
 
-![alt text](<Screenshot 2025-04-07 143920.png>)
-
+![alt text](<Screenshot 2025-04-10 230834.png>)
 
 ## RESULT
 Thus the program for creating movies database using ORM hass been executed successfully
